@@ -1,0 +1,50 @@
+generated: '2026-07-17'
+method: searched
+source: >-
+  No first-party OpenAPI is published, so this profile is assembled from probed
+  live evidence: the iHealth Developer Portal SPA bundle
+  (developer.ihealthlabs.com) which references OAuth2 authorize/consent/validate
+  endpoints and OpenApiV2 application/user data resources on
+  api.ihealthlabs.com, plus the ihealthlabs.com storefront
+  /.well-known/openid-configuration (Shopify Customer Account API).
+summary:
+  types:
+    - oauth2
+    - openIdConnect
+schemes:
+  - name: ihealthOpenApiOAuth2
+    type: oauth2
+    flow: authorizationCode
+    description: >-
+      iHealth Open API V2 authorizes third-party applications via OAuth 2.0.
+      The developer portal issues client credentials and drives an
+      authorization-code consent flow before an app may read a user's device
+      data.
+    endpoints:
+      authorize: https://developer.ihealthlabs.com/api/public/oauth2/authorize
+      consent: https://developer.ihealthlabs.com/api/public/oauth2/check-consent
+      validate_client: https://developer.ihealthlabs.com/api/public/oauth2/validate-client
+    resource_host: https://api.ihealthlabs.com
+    evidence: >-
+      developer.ihealthlabs.com JS bundle references /api/public/oauth2/*
+      routes and OpenApiV2 application/user data paths; api.ihealthlabs.com
+      returns HTTP 403 to unauthenticated requests.
+    docs: https://developer.ihealthlabs.com/
+  - name: shopifyCustomerAccount
+    type: openIdConnect
+    description: >-
+      The ihealthlabs.com storefront exposes the Shopify Customer Account API as
+      an OpenID Connect provider (issuer shopify.com), used for shopper login,
+      not for the health-device Open API.
+    openid_configuration: well-known/andon-health-openid-configuration.json
+    issuer: https://shopify.com/authentication/42894065826
+    token_endpoint: https://account.ihealthlabs.com/authentication/oauth/token
+    authorization_endpoint: https://account.ihealthlabs.com/authentication/oauth/authorize
+    jwks_uri: https://account.ihealthlabs.com/authentication/.well-known/jwks.json
+    id_token_signing_alg: RS256
+    pkce: S256
+    grant_types:
+      - authorization_code
+      - refresh_token
+      - urn:ietf:params:oauth:grant-type:jwt-bearer
+    evidence: ihealthlabs.com/.well-known/openid-configuration (HTTP 200).
