@@ -1,0 +1,25 @@
+generated: '2026-07-17'
+method: searched
+source: >-
+  ihealthlabs.com /.well-known/openid-configuration (scopes_supported). These
+  scopes govern the Shopify Customer Account API on the storefront. The iHealth
+  Open API V2 (api.ihealthlabs.com) also uses OAuth 2.0, but its device-data
+  scope list is not published on any public endpoint.
+docs: https://ihealthlabs.com/.well-known/openid-configuration
+provider: shopify-customer-account
+scopes:
+  - name: openid
+    description: OpenID Connect authentication; issue an ID token for the signed-in shopper.
+  - name: email
+    description: Access the shopper's email claim.
+  - name: customer-account-api:full
+    description: Full access to the Shopify Customer Account API for the authorized shopper.
+  - name: customer-account-mcp-api:full
+    description: >-
+      Full access to the Customer Account MCP API, enabling agent-driven access
+      to the shopper's account over the Model Context Protocol.
+notes: >-
+  The iHealth Open API V2 device-data OAuth flow
+  (developer.ihealthlabs.com/api/public/oauth2/*) is confirmed live but its
+  scope names are gated behind developer registration and are not enumerated
+  publicly; only search evidence, no fabrication, is recorded here.

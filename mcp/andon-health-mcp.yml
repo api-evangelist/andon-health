@@ -1,0 +1,41 @@
+generated: '2026-07-17'
+method: searched
+source: >-
+  ihealthlabs.com /.well-known/ucp and /llms.txt. The iHealth Labs storefront
+  exposes a hosted, remote MCP server via the Universal Commerce Protocol
+  (Shopify-native). This is a commerce/shopping MCP for the online store, NOT a
+  first-party MCP over the iHealth Open API V2 health-device data (no such
+  server was found).
+servers:
+  - name: iHealth Labs Store (UCP Shopping MCP)
+    status: live
+    transport: mcp
+    kind: hosted-remote
+    provider: shopify-ucp
+    endpoint: https://ihealthlabs.com/api/ucp/mcp
+    canonical_endpoint: https://ihealthlabsonline.myshopify.com/api/ucp/mcp
+    protocol: Universal Commerce Protocol (UCP)
+    ucp_versions:
+      - '2026-04-08'
+      - '2026-01-23'
+    schema: https://ucp.dev/2026-04-08/services/shopping/mcp.openrpc.json
+    auth: >-
+      Read/discovery is unauthenticated; checkout requires contemporaneous
+      human buyer approval (payment via Shop Pay).
+    tools:
+      - name: search_catalog
+        description: Search the store catalog for products matching buyer intent.
+      - name: create_cart
+        description: Create a cart and add desired items.
+      - name: create_checkout
+        description: Start the purchase flow for a cart.
+      - name: update_checkout
+        description: Set shipping address and method on a checkout.
+      - name: complete_checkout
+        description: Finalize the purchase (requires explicit buyer payment approval).
+    tools_source: ihealthlabs.com/llms.txt "Typical Agent Flow" (verbatim tool names)
+notes: >-
+  A first-party MCP server over the iHealth Open API V2 (blood pressure / user
+  device data on api.ihealthlabs.com) does not exist publicly. No candidate
+  tool list is derived here because there is no captured OpenAPI to ground it
+  in (no fabrication).

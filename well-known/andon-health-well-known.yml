@@ -1,0 +1,68 @@
+generated: '2026-07-17'
+method: searched
+source: >-
+  Probed /.well-known/ and agent-discovery paths on the live iHealth Labs
+  (Andon Health brand) hosts. andonhealth.com is a parked/for-sale domain; the
+  live surfaces are the ihealthlabs.com Shopify storefront, the iHealth Cloud,
+  and the iHealth Developer Portal.
+hosts:
+  - host: ihealthlabs.com
+    note: iHealth Labs online store (Shopify storefront)
+    endpoints:
+      - path: /.well-known/openid-configuration
+        status: 200
+        file: andon-health-openid-configuration.json
+        note: >-
+          Shopify Customer Account API OIDC discovery (issuer shopify.com,
+          token/authorize endpoints on account.ihealthlabs.com).
+      - path: /.well-known/oauth-authorization-server
+        status: 200
+        file: andon-health-oauth-authorization-server.json
+        note: RFC 8414 authorization-server metadata (identical to OIDC config).
+      - path: /.well-known/ucp
+        status: 200
+        file: andon-health-ucp.json
+        note: >-
+          Universal Commerce Protocol merchant profile; exposes a hosted MCP
+          shopping endpoint and embedded transport (Shopify-native).
+      - path: /llms.txt
+        status: 200
+        file: ../llms/andon-health-llms.txt
+        note: Agent instructions for the storefront (Shopify shop.app / UCP).
+      - path: /agents.md
+        status: 200
+        file: null
+        note: Canonical agent-facing store description (mirrors llms.txt).
+      - path: /.well-known/security.txt
+        status: 404
+        file: null
+      - path: /.well-known/api-catalog
+        status: 404
+        file: null
+      - path: /.well-known/ai-plugin.json
+        status: 404
+        file: null
+  - host: developer.ihealthlabs.com
+    note: iHealth Developer Portal (single-page app; well-known paths return the SPA shell, not real files)
+    endpoints:
+      - path: /.well-known/security.txt
+        status: 200
+        file: null
+        note: SPA catch-all (returns index.html, not a real security.txt).
+      - path: /openapi.json
+        status: 200
+        file: null
+        note: SPA catch-all (returns index.html, not a real spec).
+  - host: cloud.ihealthlabs.com
+    note: iHealth Cloud login (single-page app)
+    endpoints:
+      - path: /.well-known/openid-configuration
+        status: 200
+        file: null
+        note: SPA catch-all (returns index.html, not real OIDC metadata).
+  - host: api.ihealthlabs.com
+    note: iHealth Open API V2 host (OAuth2-protected; unauthenticated requests return 403)
+    endpoints:
+      - path: /openapi.json
+        status: 404
+        file: null

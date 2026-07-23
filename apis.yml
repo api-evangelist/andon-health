@@ -1,24 +1,109 @@
 aid: andon-health
 name: Andon Health
-description: 'Andon Health is a company surfaced as a portfolio company of idg-capital and added to the
-  API Evangelist network as a stub for enrichment. Sector: healthcare. This profile is a lead awaiting
-  the enrichment pipeline.'
+description: >-
+  Andon Health Co., Ltd. is a Tianjin, China-based medical device manufacturer,
+  best known globally through its iHealth brand and its US subsidiary iHealth
+  Labs Inc (founded 2010). The company designs connected consumer health
+  hardware — wireless blood pressure monitors, smart glucose monitors, pulse
+  oximeters, body-composition scales, infrared thermometers, and at-home rapid
+  antigen tests (COVID-19, flu, RSV) — paired with the iHealth mobile apps and
+  the iHealth Cloud. For developers, Andon Health/iHealth publishes the iHealth
+  Open API V2, an OAuth 2.0-authorized REST API on api.ihealthlabs.com that lets
+  third-party applications read a consenting user's device measurements (blood
+  pressure and user profile resources are confirmed). The corporate
+  andonhealth.com domain is currently parked/for-sale; the live surfaces are the
+  ihealthlabs.com storefront, cloud.ihealthlabs.com, and the iHealth Developer
+  Portal at developer.ihealthlabs.com.
 url: https://raw.githubusercontent.com/api-evangelist/andon-health/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
-- idg-capital
+  - idg-capital
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
 modified: '2026-07-17'
 tags:
-- Company
-- Healthcare
-apis: []
+  - Company
+  - Healthcare
+  - Medical Devices
+  - Digital Health
+  - Remote Patient Monitoring
+  - Connected Health
+  - IoT
+  - Wearables
+image: https://ihealthlabs.com/cdn/shop/files/iHealth_logo.png
+apis:
+  - name: iHealth Open API V2
+    description: >-
+      OAuth 2.0-authorized REST API that lets registered third-party
+      applications read a consenting iHealth user's connected-device data
+      (blood pressure and user-profile resources confirmed live). Developers
+      register and obtain client credentials through the iHealth Developer
+      Portal.
+    humanURL: https://developer.ihealthlabs.com/
+    baseURL: https://api.ihealthlabs.com
+    tags:
+      - Health Data
+      - Blood Pressure
+      - OAuth2
+      - Remote Patient Monitoring
+    properties:
+      - type: DeveloperPortal
+        url: https://developer.ihealthlabs.com/
+      - type: Authentication
+        url: authentication/andon-health-authentication.yml
+      - type: OAuthScopes
+        url: scopes/andon-health-scopes.yml
+common:
+  - type: DomainSecurity
+    url: security/andon-health-domain-security.yml
+  - type: Website
+    url: https://ihealthlabs.com/
+  - type: DeveloperPortal
+    url: https://developer.ihealthlabs.com/
+  - type: Documentation
+    url: https://developer.ihealthlabs.com/
+  - type: SignUp
+    url: https://developer.ihealthlabs.com/
+  - type: Support
+    url: https://ihealthlabs.com/pages/contact-us
+  - type: PrivacyPolicy
+    url: https://ihealthlabs.com/policies/privacy-policy
+  - type: TermsOfService
+    url: https://ihealthlabs.com/policies/terms-of-service
+  - type: Authentication
+    url: authentication/andon-health-authentication.yml
+  - type: OAuthScopes
+    url: scopes/andon-health-scopes.yml
+  - type: Conformance
+    url: conformance/andon-health-conformance.yml
+  - type: WellKnown
+    url: well-known/andon-health-well-known.yml
+  - type: MCPServer
+    url: mcp/andon-health-mcp.yml
+  - type: LLMsTxt
+    url: llms/andon-health-llms.txt
 maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
-- FN: APIs.json
-  email: info@apis.io
+  - FN: Kin Lane
+    email: kin@apievangelist.com
+  - FN: APIs.json
+    email: info@apis.io
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

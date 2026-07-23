@@ -1,0 +1,45 @@
+generated: '2026-07-17'
+method: searched
+source: >-
+  Derived from probed live evidence: ihealthlabs.com
+  /.well-known/openid-configuration and /.well-known/oauth-authorization-server,
+  the ihealthlabs.com /.well-known/ucp merchant profile, and the iHealth
+  Developer Portal OAuth2 routes. No first-party OpenAPI is published, so
+  spec-grounded standards are marked unknown rather than asserted.
+standards:
+  - id: oauth2
+    conforms: true
+    evidence: >-
+      iHealth Open API V2 uses OAuth 2.0 authorization-code flow
+      (developer.ihealthlabs.com /api/public/oauth2/authorize + check-consent +
+      validate-client); the storefront advertises RFC 8414
+      authorization-server metadata.
+  - id: oidc
+    conforms: true
+    evidence: >-
+      ihealthlabs.com /.well-known/openid-configuration returns valid OIDC
+      discovery metadata (Shopify Customer Account API, issuer shopify.com,
+      RS256 id_tokens).
+  - id: pkce
+    conforms: true
+    evidence: openid-configuration advertises code_challenge_methods_supported = [S256].
+  - id: rfc8414-oauth-metadata
+    conforms: true
+    evidence: /.well-known/oauth-authorization-server present and well-formed.
+  - id: ucp-commerce
+    conforms: true
+    evidence: >-
+      ihealthlabs.com /.well-known/ucp exposes a Universal Commerce Protocol
+      merchant profile (versions 2026-04-08 / 2026-01-23) with a hosted MCP
+      shopping endpoint (Shopify-native).
+  - id: fhir
+    conforms: false
+    evidence: >-
+      No FHIR endpoints found; iHealth Open API V2 exposes proprietary device
+      data resources (blood pressure, user info) rather than HL7 FHIR.
+  - id: rfc9457
+    conforms: unknown
+    evidence: No published OpenAPI to confirm application/problem+json error format.
+  - id: idempotency
+    conforms: unknown
+    evidence: No published OpenAPI or docs confirming an idempotency-key mechanism.
