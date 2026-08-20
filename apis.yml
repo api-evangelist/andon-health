@@ -59,6 +59,11 @@ apis:
     tags:
       - Health Data
       - Blood Pressure
+      - Authentication
+      - Remote Patient Monitoring
+    tags_raw:
+      - Health Data
+      - Blood Pressure
       - OAuth2
       - Remote Patient Monitoring
     properties:
