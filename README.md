@@ -64,6 +64,101 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Andon Health is a company surfaced as a portfolio company of idg-capital and added to the API Evangelist network as a stub for enrichment. Sector: healthcare. This profile is a lead awaiting the enrichment pipeline.
+Andon Health Co., Ltd. is a Tianjin, China-based medical device manufacturer, best known globally through its iHealth brand and its US subsidiary iHealth Labs Inc (founded 2010). The company designs connected consumer health hardware — wireless blood pressure monitors, smart glucose monitors, pulse oximeters, body-composition scales, infrared thermometers, and at-home rapid antigen tests (COVID-19, flu, RSV) — paired with the iHealth mobile apps and the iHealth Cloud. For developers, Andon Health/iHealth publishes the iHealth Open API V2, an OAuth 2.0-authorized REST API on api.ihealthlabs.com that lets third-party applications read a consenting user's device measurements (blood pressure and user profile resources are confirmed). The corporate andonhealth.com domain is currently parked/for-sale; the live surfaces are the ihealthlabs.com storefront, cloud.ihealthlabs.com, and the iHealth Developer Portal at developer.ihealthlabs.com.
 
-Backed by: idg-capital
+**Areas:** Company · Healthcare · Medical Devices · Digital Health · Remote Patient Monitoring · Connected Health · IoT · Wearables
+
+## Andon Health on APIs.io
+
+Everything profiled for Andon Health is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/andon-health/](https://apis.io/providers/andon-health/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [iHealth Open API V2](https://apis.io/apis/andon-health/ihealth-open-api-v2/) — OAuth 2.0-authorized REST API that lets registered third-party applications read a consenting iHealth user's connected-device data (blood pressure and…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [andon-health-mcp.yml](https://apis.io/servers/andon-health/andon-health-mcp-yml/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Andon Health Authentication](https://apis.io/security/andon-health/andon-health-authentication/)
+- [Andon Health Domain Security](https://apis.io/security/andon-health/andon-health-domain-security/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Andon Health Scopes](https://apis.io/scopes/andon-health/andon-health-scopes/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://ihealthlabs.com/)
+- [Documentation](https://developer.ihealthlabs.com/)
+- [Sign up](https://developer.ihealthlabs.com/)
+- [Support](https://ihealthlabs.com/pages/contact-us)
+- [Terms of service](https://ihealthlabs.com/policies/terms-of-service)
+- [Privacy policy](https://ihealthlabs.com/policies/privacy-policy)
+
+## API Evangelist rating
+
+**Kin Score 20.3** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 75.0 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 16.7 |
+| Access clarity | 21.1 |
+
+**Agent readiness 5.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | platform (partial credit) |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | platform (partial credit) |
+
+**Regulatory alignment 32.8** — Health
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/andon-health/](https://apis.io/providers/andon-health/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Andon Health: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/andon-health/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
